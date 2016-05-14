@@ -25,7 +25,7 @@ PlayWindow::PlayWindow(QWidget *parent) :
         timer->start();
 
         srand(time(NULL));
-        many=500; //less planets(easier) for larger number, normal 500
+        many=40; //less planets(easier) for larger number, normal 50
         displayscore=0;
         showScore();
 
@@ -39,9 +39,6 @@ PlayWindow::PlayWindow(QWidget *parent) :
         connect(timer3, SIGNAL(timeout()), this, SLOT(game_end()));
         timer3->setSingleShot(true);
         timer3->start(30000);
-
-        //keypress
-
     }
 
 PlayWindow::~PlayWindow(){
@@ -70,44 +67,16 @@ void PlayWindow::showTime(){
     ui->label_time->setText(alltimetext);
 }
 
-//generate random items
+//generate items at random time
 void PlayWindow::generate_item(){
     delay();
-    int chooseitem;
-    chooseitem = qrand()%2;
-    if(displaytime>25){
-        switch (chooseitem) {
-            case 0:{
-                drumword_l *item_w_L = new drumword_l();
-                scene->addItem(item_w_L);
-                break;
-            }
-            case 1:{
-                drumword_r *item_w_R = new drumword_r();
-                scene->addItem(item_w_R);
-                break;
-            }
-        }
-    }
-    else{
-        switch (chooseitem) {
-            case 0:{
-                drum_l *item_L = new drum_l();
-                scene->addItem(item_L);
-                break;
-            }
-            case 1:{
-                drum_r *item_R = new drum_r();
-                scene->addItem(item_R);
-                break;
-            }
-        }
-    }
+    drums *item = new drums();
+    scene->addItem(item);
 }
 
 //random delay
 void PlayWindow::delay(){
-    QTime dieTime= QTime::currentTime().addMSecs(200+qrand()%many);
+    QTime dieTime= QTime::currentTime().addMSecs(100+qrand()%10*many);
     while (QTime::currentTime() < dieTime)
         QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }
@@ -116,16 +85,11 @@ void PlayWindow::delay(){
 void PlayWindow::game_end(){
     extern MainWindow *ptrw;
     ptrw -> show();
-    dialog_score *dia;
+    extern dialog_score *dia;
     dia = new dialog_score();
     dia->show();
     this->close();
-    delete this;
-}
-
-//key press event
-void PlayWindow::keyPressEvent(QKeyEvent *event){
-
+    //delete this;
 }
 
 //show the score

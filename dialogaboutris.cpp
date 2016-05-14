@@ -7,18 +7,17 @@ DialogAboutris::DialogAboutris(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    //set bg
     QMovie *movie;
     movie = new QMovie(":/images/giphy5.gif");
     ui->label_bg->setMovie(movie);
     movie->start();
 }
 
-DialogAboutris::~DialogAboutris()
-{
+DialogAboutris::~DialogAboutris(){
     delete ui;
 }
 
-void DialogAboutris::on_pushButton_clicked()
-{
+void DialogAboutris::on_pushButton_clicked(){
     close();
 }

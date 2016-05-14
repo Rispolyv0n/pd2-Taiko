@@ -341,13 +341,13 @@
       <x>150</x>
       <y>50</y>
       <width>731</width>
-      <height>221</height>
+      <height>211</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Segoe UI Black</family>
-      <pointsize>50</pointsize>
+      <pointsize>45</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>

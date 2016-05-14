@@ -22,14 +22,11 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-public slots:
+private slots:
     void on_pushbutton_play_clicked();
     void on_pushbutton_exit_clicked();
     void on_action_quit_triggered();
     void on_action_aboutris_triggered();
-
-private slots:
-
     void on_action_howto_triggered();
 
 private:

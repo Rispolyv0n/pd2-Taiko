@@ -17,22 +17,16 @@ SOURCES += main.cpp \
     mainwindow.cpp \
     playwindow.cpp \
     dialogaboutris.cpp \
-    drumword_l.cpp \
-    drumword_r.cpp \
-    drum_l.cpp \
-    drum_r.cpp \
     dialog_score.cpp \
-    dialog_howto.cpp
+    dialog_howto.cpp \
+    drums.cpp
 
 HEADERS  += mainwindow.h \
     playwindow.h \
     dialogaboutris.h \
-    drumword_l.h \
-    drumword_r.h \
-    drum_l.h \
-    drum_r.h \
     dialog_score.h \
-    dialog_howto.h
+    dialog_howto.h \
+    drums.h
 
 FORMS    += mainwindow.ui \
     playwindow.ui \

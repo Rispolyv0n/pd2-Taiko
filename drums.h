@@ -1,18 +1,20 @@
-#ifndef DRUM_R_H
-#define DRUM_R_H
+#ifndef DRUMS_H
+#define DRUMS_H
 
 #include<QGraphicsPixmapItem>
 #include<QPixmap>
 #include<QObject>
 
-class drum_r: public QObject, public QGraphicsPixmapItem
+class drums: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 public:
-    drum_r();
+    drums();
     void keyPressEvent(QKeyEvent *event);
 public slots:
     void move();
+private:
+    int whichdrum;
 };
 
-#endif // DRUM_R_H
+#endif // DRUMS_H

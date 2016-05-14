@@ -19,10 +19,7 @@
 #include "dialog_score.h"
 #include "dialog_howto.h"
 #include "mainwindow.h"
-#include "drum_l.h"
-#include "drum_r.h"
-#include "drumword_l.h"
-#include "drumword_r.h"
+#include "drums.h"
 
 namespace Ui {
 class PlayWindow;
@@ -37,19 +34,18 @@ public:
     ~PlayWindow();
     void showScore(int acc=0);
     int displayscore;
+    int displaytime;
 
 public slots:
-    void keyPressEvent(QKeyEvent *event);
-    void on_action_quit_triggered();
-    void on_action_ris_triggered();
-
-private slots:
-    void showTime();
     void generate_item();
     void delay();
     void game_end();
 
+private slots:
+    void showTime();
     void on_action_howto_triggered();
+    void on_action_quit_triggered();
+    void on_action_ris_triggered();
 
 private:
     Ui::PlayWindow *ui;
@@ -57,13 +53,10 @@ private:
     QGraphicsView view;
     QString alltimetext;
     QString timetext;
-    int displaytime;
     QTime count;
     int many;
     QString scoretext;
     QString transcore;
-
-
 };
 
 #endif // PLAYWINDOW_H

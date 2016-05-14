@@ -2,13 +2,13 @@
 #include "ui_mainwindow.h"
 
 PlayWindow *m;
+dialog_score *dia;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     connect(ui->pushbutton_play, SIGNAL(click()), this, SLOT(displayTheWindow()));
-    //connect(ui->action_aboutris, SIGNAL(triggered()), this, SLOT(displayTheDialogAboutris()));
 
     //play the background gif
     movie = new QMovie(":/images/giphy2.gif");

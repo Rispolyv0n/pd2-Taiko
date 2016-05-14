@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui \
+            multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -20,7 +21,8 @@ SOURCES += main.cpp \
     drumword_r.cpp \
     drum_l.cpp \
     drum_r.cpp \
-    dialog_score.cpp
+    dialog_score.cpp \
+    dialog_howto.cpp
 
 HEADERS  += mainwindow.h \
     playwindow.h \
@@ -29,15 +31,17 @@ HEADERS  += mainwindow.h \
     drumword_r.h \
     drum_l.h \
     drum_r.h \
-    dialog_score.h
+    dialog_score.h \
+    dialog_howto.h
 
 FORMS    += mainwindow.ui \
     playwindow.ui \
     dialogaboutris.ui \
-    dialog_score.ui
+    dialog_score.ui \
+    dialog_howto.ui
 
 RESOURCES += \
-    images/imagercs.qrc
+    rrr.qrc
 
 DISTFILES += \
     ../images/200 (2).gif \

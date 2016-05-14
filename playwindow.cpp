@@ -1,7 +1,6 @@
 #include "playwindow.h"
 #include "ui_playwindow.h"
 
-
 PlayWindow::PlayWindow(QWidget *parent) :
     QMainWindow(parent),
         ui(new Ui::PlayWindow){
@@ -10,7 +9,7 @@ PlayWindow::PlayWindow(QWidget *parent) :
 
         //play the catpizza gif
         QMovie *movie2;
-        movie2 = new QMovie(":/200 (4).gif");
+        movie2 = new QMovie(":/images/200 (4).gif");
         ui->label_catpizza->setMovie(movie2);
         movie2->start();
 
@@ -19,31 +18,29 @@ PlayWindow::PlayWindow(QWidget *parent) :
         scene->setSceneRect(0,0,1031,151);
         ui->graphicsView_play->setScene(scene);
 
-        //timer for counting 30sec
+        //counting 30sec
         count.start();
         QTimer *timer=new QTimer(this);
         connect(timer, SIGNAL(timeout()), this, SLOT(showTime()));
         timer->start();
 
         srand(time(NULL));
-        speed=800;
+        many=500; //less planets(easier) for larger number, normal 500
         displayscore=0;
         showScore();
 
         //randomgenerate!!!!!!!
         QTimer *timer2=new QTimer(this);
         connect(timer2, SIGNAL(timeout()), this, SLOT(generate_item()));
-        timer2->start(500);
+        timer2->start(500); //less planets(easier) for larger number, normal 500
 
-        //30sec end
+        //30sec end the game
         QTimer *timer3=new QTimer(this);
         connect(timer3, SIGNAL(timeout()), this, SLOT(game_end()));
+        timer3->setSingleShot(true);
         timer3->start(30000);
 
         //keypress
-
-
-
 
     }
 
@@ -54,13 +51,7 @@ PlayWindow::~PlayWindow(){
 //menu_quit
 void PlayWindow::on_action_quit_triggered(){
     this->close();
-}
-
-//menu_tostartwindow:display the main window and hide this one
-void PlayWindow::on_action_tostartwindow_triggered(){
-    extern MainWindow *ptrw;
-    ptrw -> show();
-    this->close();
+    qApp->quit();
 }
 
 //show new dialog aboutris
@@ -77,14 +68,6 @@ void PlayWindow::showTime(){
     timetext.setNum(displaytime);
     alltimetext += timetext;
     ui->label_time->setText(alltimetext);
-}
-
-//menu_restart
-void PlayWindow::on_action_restart_triggered(){
-    PlayWindow *mPlayWindow;
-    mPlayWindow = new PlayWindow();
-    this->hide();
-    mPlayWindow->show();
 }
 
 //generate random items
@@ -124,7 +107,7 @@ void PlayWindow::generate_item(){
 
 //random delay
 void PlayWindow::delay(){
-    QTime dieTime= QTime::currentTime().addMSecs(200+qrand()%speed);
+    QTime dieTime= QTime::currentTime().addMSecs(200+qrand()%many);
     while (QTime::currentTime() < dieTime)
         QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
 }
@@ -137,6 +120,7 @@ void PlayWindow::game_end(){
     dia = new dialog_score();
     dia->show();
     this->close();
+    delete this;
 }
 
 //key press event
@@ -153,6 +137,9 @@ void PlayWindow::showScore(int acc){
     ui->label_score->setText(scoretext);
 }
 
-
-
-
+//show dialog howtoplay
+void PlayWindow::on_action_howto_triggered(){
+    dialog_howto *dia;
+    dia = new dialog_howto();
+    dia->show();
+}

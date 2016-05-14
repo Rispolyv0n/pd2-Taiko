@@ -2,6 +2,7 @@
 #define DIALOGABOUTRIS_H
 
 #include <QDialog>
+#include <QMovie>
 
 namespace Ui {
 class DialogAboutris;

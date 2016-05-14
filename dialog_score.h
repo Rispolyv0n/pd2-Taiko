@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <playwindow.h>
+#include <QMovie>
 
 namespace Ui {
 class dialog_score;

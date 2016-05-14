@@ -7,7 +7,7 @@
 #include<QKeyEvent>
 
 drumword_l::drumword_l(): QObject(), QGraphicsPixmapItem(){
-    setPixmap(QPixmap(":/wordball_l.png"));
+    setPixmap(QPixmap(":/images/wordball_l.png"));
     setPos(1005,25);
     setFlag(QGraphicsItem::ItemIsFocusable);
     QTimer *timer = new QTimer(this);
@@ -24,7 +24,7 @@ void drumword_l::move(){
     }
 }
 void drumword_l::keyPressEvent(QKeyEvent *event){
-    if(event->key()==Qt::Key_L && pos().x()>-10){
+    if(event->key()==Qt::Key_L && pos().x()>10){
             extern PlayWindow *m;
             m->showScore(12-abs(pos().x()-45)/5);
             scene()->removeItem(this);

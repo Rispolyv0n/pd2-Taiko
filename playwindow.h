@@ -17,6 +17,7 @@
 #include <ctime>
 
 #include "dialog_score.h"
+#include "dialog_howto.h"
 #include "mainwindow.h"
 #include "drum_l.h"
 #include "drum_r.h"
@@ -40,15 +41,15 @@ public:
 public slots:
     void keyPressEvent(QKeyEvent *event);
     void on_action_quit_triggered();
-    void on_action_tostartwindow_triggered();
     void on_action_ris_triggered();
-    void on_action_restart_triggered();
 
 private slots:
     void showTime();
     void generate_item();
     void delay();
     void game_end();
+
+    void on_action_howto_triggered();
 
 private:
     Ui::PlayWindow *ui;
@@ -58,7 +59,7 @@ private:
     QString timetext;
     int displaytime;
     QTime count;
-    int speed;
+    int many;
     QString scoretext;
     QString transcore;
 

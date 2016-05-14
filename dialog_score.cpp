@@ -8,6 +8,11 @@ dialog_score::dialog_score(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    QMovie *movie;
+    movie = new QMovie(":/images/giphy5.gif");
+    ui->label_bg->setMovie(movie);
+    movie->start();
+
     extern PlayWindow *m;
     QString scoretext;
     scoretext.setNum(m->displayscore);

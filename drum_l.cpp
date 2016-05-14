@@ -7,7 +7,7 @@
 #include<QKeyEvent>
 
 drum_l::drum_l(): QObject(), QGraphicsPixmapItem(){
-    setPixmap(QPixmap(":/ball_l.png"));
+    setPixmap(QPixmap(":/images/ball_l.png"));
     setPos(1005,25);
     setFlag(QGraphicsItem::ItemIsFocusable);
     QTimer *timer = new QTimer(this);
@@ -23,7 +23,7 @@ void drum_l::move(){
     }
 }
 void drum_l::keyPressEvent(QKeyEvent *event){
-    if(event->key()==Qt::Key_L && pos().x()>-10){
+    if(event->key()==Qt::Key_L && pos().x()>10){
         extern PlayWindow *m;
         m->showScore(12-abs(pos().x()-45)/5);
         scene()->removeItem(this);

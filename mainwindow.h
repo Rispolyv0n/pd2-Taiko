@@ -5,8 +5,10 @@
 #include <QLabel>
 #include <QWidget>
 #include <QMovie>
+#include <QMediaPlayer>
 #include "playwindow.h"
 #include "dialogaboutris.h"
+#include "dialog_howto.h"
 
 namespace Ui {
 class MainWindow;
@@ -27,6 +29,8 @@ public slots:
     void on_action_aboutris_triggered();
 
 private slots:
+
+    void on_action_howto_triggered();
 
 private:
     Ui::MainWindow *ui;

@@ -6,7 +6,7 @@ drums::drums(): QObject(), QGraphicsPixmapItem(){
     extern PlayWindow *m;
     s = new QMediaPlayer();
     s->setMedia(QUrl("qrc:/images/din.mp3"));
-    srand(time(NULL));
+    //srand(time(NULL));
     int chooseitem;
     chooseitem = qrand()%2;
     if(m->displaytime>25){

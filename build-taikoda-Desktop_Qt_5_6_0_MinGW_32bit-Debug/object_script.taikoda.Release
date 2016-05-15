@@ -1,0 +1,16 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\playwindow.o
+./release\dialogaboutris.o
+./release\dialog_score.o
+./release\dialog_howto.o
+./release\drums.o
+./release\qrc_rrr.o
+./release\moc_mainwindow.o
+./release\moc_playwindow.o
+./release\moc_dialogaboutris.o
+./release\moc_dialog_score.o
+./release\moc_dialog_howto.o
+./release\moc_drums.o
+);

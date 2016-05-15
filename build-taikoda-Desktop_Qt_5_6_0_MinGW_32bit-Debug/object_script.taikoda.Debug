@@ -1,0 +1,16 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\playwindow.o
+./debug\dialogaboutris.o
+./debug\dialog_score.o
+./debug\dialog_howto.o
+./debug\drums.o
+./debug\qrc_rrr.o
+./debug\moc_mainwindow.o
+./debug\moc_playwindow.o
+./debug\moc_dialogaboutris.o
+./debug\moc_dialog_score.o
+./debug\moc_dialog_howto.o
+./debug\moc_drums.o
+);

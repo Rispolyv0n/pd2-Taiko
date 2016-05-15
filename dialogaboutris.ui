@@ -106,7 +106,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="images/imagercs.qrc">:/giphy5.gif</pixmap>
+    <pixmap resource="rrr.qrc">:/images/giphy5.gif</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -131,7 +131,7 @@
   <zorder>label</zorder>
  </widget>
  <resources>
-  <include location="images/imagercs.qrc"/>
+  <include location="rrr.qrc"/>
  </resources>
  <connections/>
 </ui>

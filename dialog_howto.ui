@@ -38,7 +38,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="images/imagercs.qrc">:/giphy5.gif</pixmap>
+    <pixmap resource="rrr.qrc">:/images/giphy5.gif</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_panel">
@@ -130,7 +130,7 @@ good luck my planet eater &lt;3</string>
   </widget>
  </widget>
  <resources>
-  <include location="images/imagercs.qrc"/>
+  <include location="rrr.qrc"/>
  </resources>
  <connections/>
 </ui>

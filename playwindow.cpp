@@ -7,11 +7,15 @@ PlayWindow::PlayWindow(QWidget *parent) :
         ui->setupUi(this);
         connect(ui->action_tostartwindow, SIGNAL(triggered()), this, SLOT(displayTheMainWindow()));
 
-        //play the catpizza gif
+        //play the cat gif
         QMovie *movie2;
         movie2 = new QMovie(":/images/200 (4).gif");
         ui->label_catpizza->setMovie(movie2);
         movie2->start();
+        QMovie *movie3;
+        movie3 = new QMovie(":/images/200 (5).gif");
+        ui->label_catballoon->setMovie(movie3);
+        movie3->start();
 
         //point scene
         scene = new QGraphicsScene(this);

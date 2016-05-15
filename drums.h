@@ -4,6 +4,14 @@
 #include<QGraphicsPixmapItem>
 #include<QPixmap>
 #include<QObject>
+#include<math.h>
+#include<QTimer>
+#include<QList>
+#include<QGraphicsScene>
+#include<QKeyEvent>
+#include<ctime>
+#include<cstdlib>
+#include<QMediaPlayer>
 
 class drums: public QObject, public QGraphicsPixmapItem
 {
@@ -15,6 +23,7 @@ public slots:
     void move();
 private:
     int whichdrum;
+    QMediaPlayer *s;
 };
 
 #endif // DRUMS_H

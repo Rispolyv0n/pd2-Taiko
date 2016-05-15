@@ -212,6 +212,28 @@
      <set>Qt::NoTextInteraction</set>
     </property>
    </widget>
+   <widget class="QLabel" name="label_catballoon">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>0</y>
+      <width>181</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="rrr.qrc">:/images/200 (5).gif</pixmap>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="textInteractionFlags">
+     <set>Qt::NoTextInteraction</set>
+    </property>
+   </widget>
    <zorder>label_playbg</zorder>
    <zorder>graphicsView_play</zorder>
    <zorder>label_catpizza</zorder>
@@ -220,6 +242,7 @@
    <zorder>line_critical</zorder>
    <zorder>label</zorder>
    <zorder>label_2</zorder>
+   <zorder>label_catballoon</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

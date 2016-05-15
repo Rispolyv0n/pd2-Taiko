@@ -134,7 +134,7 @@ your score:</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="images/imagercs.qrc">:/giphy5.gif</pixmap>
+    <pixmap resource="rrr.qrc">:/images/giphy5.gif</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -160,7 +160,7 @@ your score:</string>
   <zorder>label_showscore</zorder>
  </widget>
  <resources>
-  <include location="images/imagercs.qrc"/>
+  <include location="rrr.qrc"/>
  </resources>
  <connections/>
 </ui>
